@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 400" preserveAspectRatio="none">
+  <defs>
+    <filter id="b1"><feGaussianBlur stdDeviation="0.8"/></filter>
+    <filter id="b2"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="b3"><feGaussianBlur stdDeviation="3.5"/></filter>
+    <filter id="b4"><feGaussianBlur stdDeviation="5.5"/></filter>
+    <filter id="b5"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="cloudBlur"><feGaussianBlur stdDeviation="12"/></filter>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2f3f4" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#f2f3f4" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== 云层 ===== -->
+  <!-- 远处小云 -->
+  <ellipse cx="200" cy="100" rx="120" ry="18" fill="#dce0e3" opacity="0.5" filter="url(#cloudBlur)"/>
+  <ellipse cx="280" cy="95" rx="90" ry="14" fill="#dce0e3" opacity="0.4" filter="url(#cloudBlur)"/>
+
+  <ellipse cx="900" cy="80" rx="140" ry="20" fill="#dde1e4" opacity="0.45" filter="url(#cloudBlur)"/>
+  <ellipse cx="1000" cy="75" rx="100" ry="15" fill="#dde1e4" opacity="0.38" filter="url(#cloudBlur)"/>
+
+  <ellipse cx="600" cy="130" rx="160" ry="22" fill="#d9dde1" opacity="0.42" filter="url(#cloudBlur)"/>
+  <ellipse cx="700" cy="125" rx="110" ry="16" fill="#d9dde1" opacity="0.35" filter="url(#cloudBlur)"/>
+
+  <!-- 近处大云 -->
+  <ellipse cx="1200" cy="160" rx="200" ry="28" fill="#d5d9dd" opacity="0.45" filter="url(#cloudBlur)"/>
+  <ellipse cx="1320" cy="155" rx="140" ry="22" fill="#d5d9dd" opacity="0.38" filter="url(#cloudBlur)"/>
+
+  <ellipse cx="100" cy="170" rx="180" ry="25" fill="#d8dce0" opacity="0.4" filter="url(#cloudBlur)"/>
+  <ellipse cx="220" cy="165" rx="120" ry="18" fill="#d8dce0" opacity="0.32" filter="url(#cloudBlur)"/>
+
+  <!-- ===== 飞鸟 — 人字形，进大远小 ===== -->
+
+  <!-- 极远鸟群 — 最小，最高 -->
+  <g fill="none" stroke="#b0b5ba" stroke-width="0.6" opacity="0.35">
+    <path d="M380,75 Q384,71 388,75 Q384,73 380,75"/>
+    <path d="M388,75 Q392,71 396,75 Q392,73 388,75"/>
+    <path d="M396,75 Q400,72 404,75 Q400,73 396,75"/>
+    <path d="M372,80 Q376,77 380,80 Q376,78 372,80"/>
+    <path d="M380,80 Q384,77 388,80 Q384,78 380,80"/>
+  </g>
+
+  <!-- 远鸟群 -->
+  <g fill="none" stroke="#a8adb3" stroke-width="0.8" opacity="0.4">
+    <path d="M780,90 Q785,84 790,90 Q785,87 780,90"/>
+    <path d="M790,90 Q795,84 800,90 Q795,87 790,90"/>
+    <path d="M800,90 Q805,85 810,90 Q805,87 800,90"/>
+    <path d="M770,96 Q775,92 780,96 Q775,94 770,96"/>
+    <path d="M780,96 Q785,92 790,96 Q785,94 780,96"/>
+  </g>
+
+  <!-- 中鸟群 -->
+  <g fill="none" stroke="#989ea4" stroke-width="1.1" opacity="0.45">
+    <path d="M520,120 Q526,111 532,120 Q526,116 520,120"/>
+    <path d="M532,120 Q538,111 544,120 Q538,116 532,120"/>
+    <path d="M544,120 Q550,112 556,120 Q550,116 544,120"/>
+    <path d="M508,128 Q514,121 520,128 Q514,125 508,128"/>
+    <path d="M520,128 Q526,121 532,128 Q526,125 520,128"/>
+  </g>
+
+  <!-- 近鸟群 — 最大，最低 -->
+  <g fill="none" stroke="#7a8086" stroke-width="1.6" opacity="0.5">
+    <path d="M160,175 Q168,161 176,175 Q168,169 160,175"/>
+    <path d="M176,175 Q184,161 192,175 Q184,169 176,175"/>
+    <path d="M140,186 Q148,174 156,186 Q148,181 140,186"/>
+    <path d="M156,186 Q164,174 172,186 Q164,181 156,186"/>
+  </g>
+
+  <!-- ===== 山峰 ===== -->
+  <!-- 最远 -->
+  <path d="M0,260 Q60,248 120,254 T240,245 T360,256 T480,244 T600,252 T720,242 T840,250 T960,240 T1080,248 T1200,238 T1320,246 T1440,242 L1440,400 L0,400Z"
+        fill="#c4c7cb" opacity="0.35" filter="url(#b5)"/>
+  <!-- 远 -->
+  <path d="M0,270 Q80,250 160,258 T320,242 T480,260 T640,245 T800,256 T960,240 T1120,254 T1280,244 T1440,252 L1440,400 L0,400Z"
+        fill="#b8bcc1" opacity="0.38" filter="url(#b4)"/>
+  <!-- 中远 -->
+  <path d="M0,282 Q100,250 200,268 T400,245 T600,264 T800,248 T1000,262 T1200,250 T1440,258 L1440,400 L0,400Z"
+        fill="#a8adb3" opacity="0.4" filter="url(#b3)"/>
+  <!-- 中 -->
+  <path d="M0,296 Q60,268 140,282 T300,250 T480,278 T660,255 T840,275 T1020,252 T1200,272 T1440,260 L1440,400 L0,400Z"
+        fill="#969ba2" opacity="0.4" filter="url(#b2)"/>
+  <!-- 近 -->
+  <path d="M0,310 Q100,265 220,292 T440,258 T660,288 T880,260 T1100,285 T1320,265 T1440,280 L1440,400 L0,400Z"
+        fill="#82878e" opacity="0.4" filter="url(#b1)"/>
+  <!-- 最近 -->
+  <path d="M0,328 Q80,285 200,316 T420,260 T620,308 T840,275 T1060,300 T1300,270 T1440,295 L1440,400 L0,400Z"
+        fill="#6e737a" opacity="0.42"/>
+
+  <!-- 云雾遮罩 -->
+  <rect x="0" y="0" width="1440" height="400" fill="url(#fade)"/>
+</svg>

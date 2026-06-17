@@ -1,0 +1,380 @@
+/* ===== 月白冰泠 · 清冷孤高 — 仙侠 Wiki ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&display=swap');
+
+:root {
+  --md-text-font: "SimSun", "STSong", "NSimSun", "FangSong", "KaiTi", serif;
+  --md-code-font: "Consolas", "Courier New", monospace;
+}
+
+/* ===== 亮色主题 — 月白冰泠 ===== */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f2f3f4;
+  --md-default-fg-color: #3a4048;
+  --md-primary-fg-color: #b8c4d0;
+  --md-primary-fg-color--light: #ccd6e0;
+  --md-primary-fg-color--dark: #8a98a8;
+  --md-accent-fg-color: #8898a8;
+  --md-accent-fg-color--transparent: rgba(136, 152, 168, 0.06);
+  --md-code-bg-color: #eef2f6;
+  --md-code-fg-color: #3a4048;
+  --md-sidebar-bg-color: rgba(242, 243, 244, 0.95);
+}
+
+/* ===== 暗色主题 — 夜墨山影 ===== */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #1a1c22;
+  /* 正文 — 提高亮度，不用之前太淡的色 */
+  --md-default-fg-color: #d0d4d8;
+  --md-primary-fg-color: #282c34;
+  --md-primary-fg-color--light: #343840;
+  --md-primary-fg-color--dark: #14161a;
+  --md-accent-fg-color: #98a8b4;
+  --md-code-bg-color: #202228;
+  --md-code-fg-color: #c0c4c8;
+  /* 侧边栏 — 非纯黑，微暖深灰 */
+  --md-sidebar-bg-color: rgba(30, 32, 38, 0.95);
+}
+
+/* ===== 宣纸纹理 · 薄墨晕染 ===== */
+body {
+  background-color: var(--md-default-bg-color);
+  background-image:
+    /* 宣纸纤维 — 极细横纹 */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(180, 178, 175, 0.008) 2px,
+      rgba(180, 178, 175, 0.008) 4px
+    ),
+    /* 薄墨晕染斑点 */
+    radial-gradient(ellipse 600px 300px at 15% 8%,  rgba(160, 165, 170, 0.02) 0%, transparent 100%),
+    radial-gradient(ellipse 400px 250px at 82% 22%, rgba(155, 160, 168, 0.016) 0%, transparent 100%),
+    radial-gradient(ellipse 500px 200px at 48% 68%, rgba(158, 163, 170, 0.018) 0%, transparent 100%),
+    radial-gradient(ellipse 350px 280px at 22% 78%, rgba(152, 158, 165, 0.014) 0%, transparent 100%),
+    radial-gradient(ellipse 450px 220px at 72% 72%, rgba(160, 164, 170, 0.016) 0%, transparent 100%),
+    /* 大面积雾霭 */
+    radial-gradient(ellipse 800px 400px at 50% 50%, rgba(185, 188, 192, 0.012) 0%, transparent 70%);
+}
+
+/* ===== 淡墨山水 — SVG 山峰层叠 ===== */
+.md-main {
+  position: relative;
+}
+
+.md-main::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 360px;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    url('mountains.svg') no-repeat center bottom / 100% 100%;
+}
+
+[data-md-color-scheme="slate"] .md-main::after {
+  background:
+    url('mountains-dark.svg') no-repeat center bottom / 100% 100%;
+}
+
+/* ===== 排版 ===== */
+.md-typeset {
+  line-height: 2.2;
+  letter-spacing: 0.04em;
+  font-weight: 320;
+}
+
+.md-typeset p {
+  text-indent: 2em;
+  margin: 0.6em 0;
+  text-align: justify;
+}
+
+.md-typeset h1 + p,
+.md-typeset h2 + p,
+.md-typeset h3 + p,
+.md-typeset h4 + p,
+.md-typeset blockquote p,
+.md-typeset li p,
+.md-typeset td p {
+  text-indent: 0;
+}
+
+/* ===== H1 ===== */
+.md-typeset h1 {
+  font-family: "Ma Shan Zheng", "ZCOOL XiaoWei", "KaiTi", serif;
+  font-size: 2.4em;
+  font-weight: 400;
+  color: #3a424c;
+  text-align: center;
+  border: none;
+  padding: 0.5em 0 0.5em;
+}
+
+.md-typeset h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin: 0.3em auto 0;
+  background: linear-gradient(90deg, transparent, #a0b0c0, transparent);
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #dce0e4;
+}
+
+/* ===== H2 ===== */
+.md-typeset h2 {
+  font-family: "Ma Shan Zheng", "ZCOOL XiaoWei", "KaiTi", serif;
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #3a444e;
+  border: none;
+  border-left: 2px solid #b0bcc8;
+  padding: 0.1em 0 0.1em 0.8em;
+  margin: 2em 0 0.6em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  color: #d8dce0;
+  border-left-color: #788898;
+}
+
+/* ===== H3 ===== */
+.md-typeset h3 {
+  font-family: "Ma Shan Zheng", "ZCOOL XiaoWei", "KaiTi", serif;
+  font-weight: 400;
+  font-size: 1.12em;
+  color: #4a545e;
+  margin: 1.5em 0 0.4em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  color: #c8ccd0;
+}
+
+/* ===== 引用 ===== */
+.md-typeset blockquote {
+  border: none;
+  border-left: 1px solid #bcc6d0;
+  background: linear-gradient(135deg, rgba(160, 175, 190, 0.04), transparent 50%);
+  padding: 1em 1.4em;
+  margin: 1.2em 0;
+  border-radius: 0 3px 3px 0;
+  font-style: normal;
+  color: #4a545e;
+}
+
+.md-typeset blockquote::after {
+  content: '注';
+  position: absolute;
+  right: 14px;
+  top: 6px;
+  font-family: "Ma Shan Zheng", "ZCOOL XiaoWei", "KaiTi", serif;
+  font-size: 1.2em;
+  color: rgba(160, 175, 190, 0.15);
+  pointer-events: none;
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  color: #bcc0c4;
+}
+
+/* ===== 链接 ===== */
+.md-typeset a {
+  color: #7a8ea0;
+  border-bottom: 1px dotted #b0c0cc;
+  text-decoration: none;
+  transition: 0.15s;
+}
+
+.md-typeset a:hover {
+  color: #5a7088;
+  border-bottom: 1px solid #8898a8;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #98a8b4;
+}
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #b8c8d4;
+}
+
+/* ===== 表格 ===== */
+.md-typeset table {
+  border: 1px solid #d8dfe6;
+}
+
+.md-typeset thead th {
+  background: linear-gradient(180deg, #eef2f6, #e4eaf0);
+  color: #3a444e;
+  font-family: "Ma Shan Zheng", "ZCOOL XiaoWei", "KaiTi", serif;
+  font-weight: 400;
+  border-bottom: 1px solid #b0bcc8;
+  padding: 0.6em 1em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset thead th {
+  background: linear-gradient(180deg, #2a2e34, #24282e);
+  color: #d8dce0;
+  border-bottom-color: #586878;
+}
+
+.md-typeset tbody tr:nth-child(even) {
+  background: rgba(160, 175, 190, 0.025);
+}
+
+/* ===== 代码 ===== */
+.md-typeset code {
+  color: #4a545e;
+  background: rgba(160, 175, 190, 0.08);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+  color: #c8ccd0;
+  background: rgba(100, 110, 120, 0.12);
+}
+
+/* ===== 侧边栏 ===== */
+.md-sidebar {
+  backdrop-filter: blur(6px);
+}
+
+.md-nav__title {
+  font-family: "Ma Shan Zheng", "ZCOOL XiaoWei", "KaiTi", serif !important;
+  color: #8898a8 !important;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+[data-md-color-scheme="slate"] .md-nav__title {
+  color: #a0b0bc !important;
+}
+
+/* 导航链接 */
+.md-nav__link {
+  color: #98a8b4 !important;
+  transition: color 0.15s;
+}
+
+.md-nav__link:hover {
+  color: #688090 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: #a0b0bc !important;
+}
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+  color: #bcc8d4 !important;
+}
+
+/* 激活项 */
+.md-nav__link--active {
+  font-weight: 600;
+  color: #607888 !important;
+  position: relative;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: #b0c0cc !important;
+}
+
+.md-nav__link--active::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 55%;
+  background: #98b0c0;
+  border-radius: 1px;
+}
+
+/* 分组分隔 */
+.md-nav--primary .md-nav__item--section {
+  border-top: 1px dotted rgba(150, 170, 185, 0.25);
+  margin-top: 0.3em;
+  padding-top: 0.3em;
+}
+
+/* ===== 搜索 ===== */
+.md-search__input {
+  border-radius: 20px !important;
+  background: rgba(140, 160, 175, 0.04) !important;
+  border: 1px solid rgba(140, 160, 175, 0.12) !important;
+}
+
+.md-search__input:focus {
+  border-color: #98b0c0 !important;
+}
+
+/* ===== 页眉 ===== */
+.md-header {
+  background: #dce4ec !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background: #2a2e34 !important;
+}
+
+/* ===== 页脚 ===== */
+.md-footer {
+  background: #dce4ec;
+  color: #5a626c;
+}
+[data-md-color-scheme="slate"] .md-footer {
+  background: #2a2e34;
+  color: #b0b4b8;
+}
+
+/* ===== 公告栏 ===== */
+.md-banner {
+  background: linear-gradient(90deg, #d8e2ea, #e0e8f0, #d8e2ea);
+  color: #6a7888;
+  text-align: center;
+  font-family: "Ma Shan Zheng", "ZCOOL XiaoWei", "KaiTi", serif;
+  letter-spacing: 0.14em;
+  font-size: 0.85em;
+  padding: 0.4em;
+}
+[data-md-color-scheme="slate"] .md-banner {
+  background: linear-gradient(90deg, #2a3038, #323840, #2a3038);
+  color: #b0b8c0;
+}
+
+/* ===== 滚动条 ===== */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #bcc6d0; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #98a8b4; }
+
+/* ===== TOC 目录 ===== */
+.md-nav--secondary .md-nav__link {
+  opacity: 0.6;
+  transition: 0.15s;
+}
+
+.md-nav--secondary .md-nav__link:hover,
+.md-nav--secondary .md-nav__link--active {
+  opacity: 1;
+  color: #688090 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link:hover {
+  color: #b0c0cc !important;
+}
+
+/* ===== 响应式 ===== */
+@media screen and (max-width: 768px) {
+  .md-typeset h1 { font-size: 1.6em; }
+  .md-typeset p { text-indent: 1.5em; }
+}
