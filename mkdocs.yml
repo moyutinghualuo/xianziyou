@@ -1,5 +1,6 @@
 site_name: 仙侠 Wiki
 site_description: 仙侠世界观 Wiki 知识库
+site_url: https://moyuhualuo.github.io/xianziyou/
 
 # Favicon & 站点图标 (emoji 作为临时图标)
 theme:
