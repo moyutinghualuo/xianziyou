@@ -3,3 +3,25 @@
 {% block announce %}
   月白风清 · 霜冷长河 · 一剑凌尘 · 万古孤寒
 {% endblock %}
+
+{% block content %}
+  {{ super() }}
+
+  <!-- Giscus 评论系统 -->
+  {% if config.extra.giscus %}
+  <script src="https://giscus.app/client.js"
+    data-repo="moyutinghualuo/xianziyou"
+    data-repo-id="{{ config.extra.giscus.repo_id }}"
+    data-category="{{ config.extra.giscus.category }}"
+    data-category-id="{{ config.extra.giscus.category_id }}"
+    data-mapping="{{ config.extra.giscus.mapping }}"
+    data-reactions-enabled="{{ config.extra.giscus.reactions_enabled }}"
+    data-emit-metadata="{{ config.extra.giscus.emit_metadata }}"
+    data-input-position="{{ config.extra.giscus.input_position }}"
+    data-theme="{{ config.extra.giscus.theme }}"
+    data-lang="{{ config.extra.giscus.lang }}"
+    crossorigin="anonymous"
+    async>
+  </script>
+  {% endif %}
+{% endblock %}

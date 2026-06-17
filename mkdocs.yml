@@ -1,24 +1,32 @@
 site_name: 仙侠 Wiki
 site_description: 仙侠世界观 Wiki 知识库
-site_url: https://moyuhualuo.github.io/xianziyou/
+site_url: https://moyutinghualuo.github.io/xianziyou/
+repo_url: https://github.com/moyutinghualuo/xianziyou
+repo_name: xianziyou
+edit_uri: edit/main/docs/
 
-# Favicon & 站点图标 (emoji 作为临时图标)
+# Favicon & 站点图标
 theme:
   name: material
   language: zh
   logo: logo.svg
   custom_dir: docs/overrides
-  font: false  # 自己在 extra.css 中控制字体
+  font: false
   features:
     - navigation.sections
     - navigation.expand
     - navigation.indexes
     - navigation.top
     - navigation.tracking
+    - navigation.instant
+    - navigation.instant.prefetch
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
-    - content.action.edit      # 显示编辑链接
+    - content.code.select
+    - content.action.edit
+    - content.action.view
   palette:
     # 亮色 — 宣纸
     - media: "(prefers-color-scheme: light)"
@@ -37,10 +45,23 @@ theme:
         icon: material/weather-night
         name: 切换至亮色模式
 
-  # 站点图标 (SVG)
   icon:
     repo: fontawesome/brands/github
     edit: material/pencil
+    view: material/eye
+
+extra:
+  # Giscus 评论系统配置
+  giscus:
+    repo_id: "1272264260"
+    category: "Discussions"
+    category_id: "DIC_kwzOEAAVyM4CeYvP"
+    mapping: "pathname"
+    reactions_enabled: true
+    emit_metadata: false
+    input_position: "top"
+    theme: "auto"
+    lang: "zh-CN"
 
 extra_css:
   - stylesheets/extra.css
@@ -48,6 +69,7 @@ extra_css:
 plugins:
   - search:
       lang: zh
+      separator: '[\s\-,:!=\[\]()"\'/]+'  # 优化中文搜索
   - awesome-pages
 
 markdown_extensions:
@@ -57,8 +79,13 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.superfences
   - pymdownx.inlinehilite
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
+  - pymdownx.details
   - footnotes
   - def_list
   - pymdownx.tasklist:
@@ -66,6 +93,5 @@ markdown_extensions:
   - toc:
       permalink: "¶"
       toc_depth: 3
-
-# 顶部编辑链接（可选，指向 GitHub 仓库）
-# edit_uri: edit/main/docs/
+  - attr_list
+  - md_in_html
