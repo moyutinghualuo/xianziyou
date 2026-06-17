@@ -1,0 +1,70 @@
+site_name: 仙侠 Wiki
+site_description: 仙侠世界观 Wiki 知识库
+
+# Favicon & 站点图标 (emoji 作为临时图标)
+theme:
+  name: material
+  language: zh
+  logo: logo.svg
+  custom_dir: docs/overrides
+  font: false  # 自己在 extra.css 中控制字体
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit      # 显示编辑链接
+  palette:
+    # 亮色 — 宣纸
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: blue grey
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至暗色模式
+    # 暗色 — 墨砚
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: blue grey
+      toggle:
+        icon: material/weather-night
+        name: 切换至亮色模式
+
+  # 站点图标 (SVG)
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: zh
+  - awesome-pages
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - admonition
+  - footnotes
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: "¶"
+      toc_depth: 3
+
+# 顶部编辑链接（可选，指向 GitHub 仓库）
+# edit_uri: edit/main/docs/

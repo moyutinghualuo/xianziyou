@@ -1,0 +1,42 @@
+backend:
+  name: github
+  repo: USERNAME/REPO          # 替换为你的 GitHub 用户名/仓库名
+  branch: main                  # 或 master
+  base_url: https://api.github.com
+  auth_endpoint: /api/auth
+
+media_folder: "docs/images"
+public_folder: "images"
+site_url: https://USERNAME.github.io/REPO  # 替换为你的 GitHub Pages URL
+display_url: https://USERNAME.github.io/REPO
+
+locale: zh_Hans
+
+collections:
+  - name: "pages"
+    label: "Wiki 页面"
+    label_singular: "页面"
+    folder: "docs"
+    create: true
+    nested:
+      depth: 100
+    # Allow files in subdirectories
+    editor:
+      preview: false
+    fields:
+      - label: "标题"
+        name: "title"
+        widget: "string"
+      - label: "排序"
+        name: "order"
+        widget: "number"
+        default: 999
+        required: false
+      - label: "正文"
+        name: "body"
+        widget: "markdown"
+    # File path pattern: preserve directory structure
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    extension: md
+    format: yaml-frontmatter
