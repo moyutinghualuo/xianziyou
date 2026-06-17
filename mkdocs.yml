@@ -69,7 +69,6 @@ extra_css:
 plugins:
   - search:
       lang: zh
-      separator: '[\s\-,:!=\[\]()"\'/]+'  # 优化中文搜索
   - awesome-pages
 
 markdown_extensions:
