@@ -1,13 +1,6 @@
 nav:
   - index.md
-  - 世界观:
-      - world-building/overview.md
-      - world-building/magic-system.md
-      - world-building/geography.md
-      - world-building/sects.md
-  - 角色:
-      - characters/characters.md
-  - 情节:
-      - plot/overview.md
-  - 术语:
-      - glossary/terms.md
+  - world-building
+  - characters
+  - plot
+  - glossary
